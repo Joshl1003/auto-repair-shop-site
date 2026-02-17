@@ -1,0 +1,19 @@
+{
+  "name": "AutoTech Repair",
+  "phoneDisplay": "(757) 856-1019",
+  "phoneHref": "+15551234567",
+  "email": "autotechnn@gmail.com",
+  "addressLine1": "13622 Warwick Blvd.",
+  "cityStateZip": "Newport News, VA 23602",
+  "googleMapsUrl": "https://maps.app.goo.gl/xPjkv1Gve948Vjpv8",
+  "hours": [
+    { "day": "Mon–Fri", "open": "7:30 AM", "close": "5:30 PM" },
+    { "day": "Sat", "open": "Closed", "close": "" },
+    { "day": "Sun", "open": "Closed", "close": "" }
+  ],
+  "social": {
+    "googleReviews": "https://www.google.com/search?q=reliable+auto+repair+yorktown+va#lrd=0x0:0x0,1",
+    "facebook": "https://www.facebook.com/people/Auto-Tech-Repair/100064908545295/#",
+    "yelp": "https://yelp.com/"
+  }
+}
