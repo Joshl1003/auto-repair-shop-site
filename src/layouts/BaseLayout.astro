@@ -1,0 +1,30 @@
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+type Props = {
+  title: string;
+  description?: string;
+};
+
+const {
+  title,
+  description = "Honest, reliable auto repair. First come, first served. Call for availability.",
+} = Astro.props;
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+
+  <body class="min-h-screen bg-white text-gray-900">
+    <Header />
+    <main class="mx-auto max-w-6xl px-4 py-8">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
