@@ -1,0 +1,48 @@
+---
+import settings from "../content/site/settings.json";
+---
+
+<header class="border-b bg-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <!-- Logo / Name -->
+    <a href="/" class="text-lg font-semibold tracking-tight">
+      {settings.name}
+    </a>
+
+    <!-- Nav (desktop) -->
+    <nav class="hidden items-center gap-6 md:flex">
+      <a class="text-sm hover:underline" href="/services">Services</a>
+      <a class="text-sm hover:underline" href="/pricing">Pricing</a>
+      <a class="text-sm hover:underline" href="/about">About</a>
+      <a class="text-sm hover:underline" href="/contact">Contact</a>
+    </nav>
+
+    <!-- CTAs -->
+    <div class="flex items-center gap-2">
+      <a
+        class="rounded-lg border px-3 py-2 text-sm font-medium hover:bg-gray-50"
+        href={settings.googleMapsUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Directions
+      </a>
+
+      <a
+        class="rounded-lg bg-black px-3 py-2 text-sm font-medium text-white hover:opacity-90"
+        href={`tel:${settings.phoneHref}`}
+      >
+        Call
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile quick links -->
+  <div class="mx-auto max-w-6xl px-4 pb-3 md:hidden">
+    <div class="flex gap-4 text-sm">
+      <a class="underline" href="/services">Services</a>
+      <a class="underline" href="/pricing">Pricing</a>
+      <a class="underline" href="/contact">Contact</a>
+    </div>
+  </div>
+</header>
