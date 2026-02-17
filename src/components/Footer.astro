@@ -1,0 +1,40 @@
+---
+import settings from "../content/site/settings.json";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t bg-white">
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
+    <!-- Contact -->
+    <div>
+      <div class="text-base font-semibold">{settings.name}</div>
+      <div class="mt-2 text-sm text-gray-700">
+        <a class="underline" href={`tel:${settings.phoneHref}`}>{settings.phoneDisplay}</a>
+      </div>
+      <div class="mt-1 text-sm text-gray-700">
+        <a class="underline" href={settings.googleMapsUrl} target="_blank" rel="noreferrer">
+          {settings.addressLine1}, {settings.cityStateZip}
+        </a>
+      </div>
+    </div>
+
+    <!-- Hours -->
+    <div>
+      <div class="text-base font-semibold">Hours</div>
+      <ul class="mt-2 space-y-1 text-sm text-gray-700">
+        {settings.hours.map((h) => (
+          <li>
+            <span class="font-medium">{h.day}:</span> {h.open}{h.close ? ` – ${h.close}` : ""}
+          </li>
+        ))}
+      </ul>
+      <div class="mt-3 text-sm text-gray-700">
+        First come, first served — call for current wait times.
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 pb-8 text-xs text-gray-500">
+    © {year} {settings.name}. All rights reserved.
+  </div>
+</footer>
