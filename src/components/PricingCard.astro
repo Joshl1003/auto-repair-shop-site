@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PricingCard from "../components/PricingCard.astro";
+---
+
+<BaseLayout title="Pricing">
+  <h1 class="text-3xl font-bold">Pricing</h1>
+  <p class="mt-2 text-sm text-gray-700">
+    Pricing varies by vehicle make/model and condition. Call for an exact quote.
+  </p>
+
+  <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <PricingCard
+      name="Oil Change"
+      description="Includes oil + filter replacement."
+      labor="$25"
+      parts="$25–$60"
+      total="$65–$100"
+      note="Synthetic oil and larger engines cost more."
+    />
+    <PricingCard
+      name="Virginia State Inspection"
+      description="Yearly vehicle inspection and sticker"
+      labor="$20"
+      parts="$0"
+      total="$20"
+      note="A rejected vehicle can be reinspected for a fee of $1 within 14 days of rejection."
+    />
+  </div>
+</BaseLayout>

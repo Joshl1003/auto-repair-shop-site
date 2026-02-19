@@ -1,0 +1,23 @@
+[
+  {
+    "id": "oil-change",
+    "name": "Synthetic Blend Oil Change",
+    "category": "Oil Changes",
+    "description": "Conventional synthetic oil changes with filter replacement.",
+    "startingAt": "$55"
+  },
+  {
+    "id": "brake-pads",
+    "name": "Brake Pads (Axle)",
+    "category": "Brake System",
+    "description": "Replace front or rear pads and inspect rotors, calipers, and brake fluid.",
+    "startingAt": "$129"
+  },
+  {
+    "id": "tire-rotation",
+    "name": "Tire Rotation",
+    "category": "Tires & Wheels",
+    "description": "Rotate tires to extend tread life and improve ride quality.",
+    "startingAt": "$25"
+  }
+]

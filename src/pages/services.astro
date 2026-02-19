@@ -1,4 +1,57 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import settings from "../content/site/settings.json";
+import ServiceCard from "../components/ServiceCard.astro";
+import services from "../content/services/services.json";
+
+// Group services by category
+const servicesByCategory = services.reduce((acc, s) => {
+  (acc[s.category] ??= []).push(s);
+  return acc;
+}, /** @type {Record<string, typeof services>} */ ({}));
+
+const categoryOrder = [
+  "Oil Changes",
+  "Brake System",
+  "Tires & Wheels",
+  "Diagnostics",
+  "Engine & Drivetrain",
+  "Suspension & Steering",
+];
+
+const categories = Object.keys(servicesByCategory).sort((a, b) => {
+  const ai = categoryOrder.indexOf(a);
+  const bi = categoryOrder.indexOf(b);
+  // Unknown categories go last (sorted alphabetically)
+  if (ai === -1 && bi === -1) return a.localeCompare(b);
+  if (ai === -1) return 1;
+  if (bi === -1) return -1;
+  return ai - bi;
+});
 ---
+
+<BaseLayout title="Services">
+  <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Services</h1>
+  <p class="mt-2 max-w-2xl text-sm text-gray-700">
+    First come, first served. Call for current wait times and availability.
+  </p>
+
+  <div class="mt-10 space-y-12">
+    {categories.map((cat) => (
+      <section>
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-xl font-semibold md:text-2xl">{cat}</h2>
+        </div>
+
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {servicesByCategory[cat].map((s) => (
+            <ServiceCard
+              name={s.name}
+              description={s.description}
+              startingAt={s.startingAt}
+            />
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
