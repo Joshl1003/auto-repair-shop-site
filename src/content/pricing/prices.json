@@ -1,0 +1,32 @@
+[
+  {
+    "id": "oil-change",
+    "name": "Synthetic Blend Oil Change",
+    "category": "Oil Changes",
+    "description": "Conventional synthetic oil changes with filter replacement.",
+    "labor": "$55",
+    "parts": "$0",
+    "total": "0",
+    "note": ""
+  },
+  {
+    "id": "brake-pads",
+    "name": "Brake Pads (Axle)",
+    "category": "Brake System",
+    "description": "Replace front or rear pads and inspect rotors, calipers, and brake fluid.",
+    "labor": "$129",
+    "parts": "$0",
+    "total": "0",
+    "note": ""
+  },
+  {
+    "id": "tire-rotation",
+    "name": "Tire Rotation",
+    "category": "Tires & Wheels",
+    "description": "Rotate tires to extend tread life and improve ride quality.",
+    "labor": "$25",
+    "parts": "$0",
+    "total": "0",
+    "note": ""
+  }
+]

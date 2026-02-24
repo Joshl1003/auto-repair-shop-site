@@ -1,4 +1,60 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import settings from "../content/site/settings.json";
+import PricingCard from "../components/PricingCard.astro";
+import prices from "../content/pricing/prices.json";
+
+// Group [prices] by category
+const pricesByCategory = prices.reduce((acc, p) => {
+  (acc[p.category] ??= []).push(p);
+  return acc;
+}, /** @type {Record<string, typeof prices>} */ ({}));
+
+const categoryOrder = [
+  "Oil Changes",
+  "Brake System",
+  "Tires & Wheels",
+  "Diagnostics",
+  "Engine & Drivetrain",
+  "Suspension & Steering",
+];
+
+const categories = Object.keys(pricesByCategory).sort((a, b) => {
+  const ai = categoryOrder.indexOf(a);
+  const bi = categoryOrder.indexOf(b);
+  // Unknown categories go last (sorted alphabetically)
+  if (ai === -1 && bi === -1) return a.localeCompare(b);
+  if (ai === -1) return 1;
+  if (bi === -1) return -1;
+  return ai - bi;
+});
 ---
+
+<BaseLayout title="Pricing">
+  <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Pricing</h1>
+  <p class="mt-2 max-w-2xl text-sm text-gray-700">
+    First come, first served. Call for current wait times and availability.
+  </p>
+
+  <div class="mt-10 space-y-12">
+    {categories.map((cat) => (
+      <section>
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-xl font-semibold md:text-2xl">{cat}</h2>
+        </div>
+
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {pricesByCategory[cat].map((p) => (
+            <PricingCard
+              name={p.name}
+              description={p.description}
+              labor={p.labor}
+              parts={p.parts}
+              total={p.total}
+              note={p.note}
+            />
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

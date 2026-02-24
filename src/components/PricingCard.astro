@@ -1,30 +1,59 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import PricingCard from "../components/PricingCard.astro";
+type Props = {
+  name: string;
+  description?: string;
+  labor?: string;
+  parts?: string;
+  total?: string;
+  note?: string;
+};
+
+const { name, description, labor, parts, total, note } = Astro.props as Props;
 ---
 
-<BaseLayout title="Pricing">
-  <h1 class="text-3xl font-bold">Pricing</h1>
-  <p class="mt-2 text-sm text-gray-700">
-    Pricing varies by vehicle make/model and condition. Call for an exact quote.
-  </p>
+<div class="rounded-xl border bg-white p-6 shadow-sm">
+  <!-- Title + Total -->
+  <div class="flex items-start justify-between gap-4">
+    <h3 class="text-lg font-semibold leading-snug">{name}</h3>
 
-  <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    <PricingCard
-      name="Oil Change"
-      description="Includes oil + filter replacement."
-      labor="$25"
-      parts="$25–$60"
-      total="$65–$100"
-      note="Synthetic oil and larger engines cost more."
-    />
-    <PricingCard
-      name="Virginia State Inspection"
-      description="Yearly vehicle inspection and sticker"
-      labor="$20"
-      parts="$0"
-      total="$20"
-      note="A rejected vehicle can be reinspected for a fee of $1 within 14 days of rejection."
-    />
+    {total && (
+      <div class="text-right">
+        <div class="text-xs text-gray-500">Est. Total</div>
+        <div class="text-base font-semibold text-gray-900">{total}</div>
+      </div>
+    )}
   </div>
-</BaseLayout>
+
+  <!-- Description -->
+  {description && (
+    <p class="mt-2 text-sm leading-relaxed text-gray-700">
+      {description}
+    </p>
+  )}
+
+  <!-- Labor + Parts Breakdown -->
+  {(labor || parts) && (
+    <div class="mt-4 space-y-2 border-t pt-4 text-sm">
+      {labor && (
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Labor</span>
+          <span class="font-medium text-gray-900">{labor}</span>
+        </div>
+      )}
+
+      {parts && (
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Parts</span>
+          <span class="font-medium text-gray-900">{parts}</span>
+        </div>
+      )}
+    </div>
+  )}
+
+  <!-- Optional Note -->
+  {note && (
+    <p class="mt-4 text-xs text-gray-500">
+      {note}
+    </p>
+  )}
+</div>
