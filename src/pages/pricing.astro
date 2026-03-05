@@ -4,10 +4,22 @@ import PricingCard from "../components/PricingCard.astro";
 import prices from "../content/pricing/prices.json";
 
 // Group [prices] by category
-const pricesByCategory = prices.reduce((acc, p) => {
+type Price = {
+  name: string;
+  description?: string;
+  labor?: string;
+  parts?: string;
+  total?: string;
+  note?: string;
+  category: string;
+};
+
+const typedPrices = prices as Price[];
+
+const pricesByCategory = typedPrices.reduce<Record<string, Price[]>>((acc, p) => {
   (acc[p.category] ??= []).push(p);
   return acc;
-}, /** @type {Record<string, typeof prices>} */ ({}));
+}, {});
 
 const categoryOrder = [
   "Oil Changes",

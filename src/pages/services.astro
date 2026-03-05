@@ -4,10 +4,19 @@ import ServiceCard from "../components/ServiceCard.astro";
 import services from "../content/services/services.json";
 
 // Group services by category
-const servicesByCategory = services.reduce((acc, s) => {
+type Service = {
+  name: string;
+  description: string;
+  startingAt?: string;
+  category: string;
+};
+
+const typedServices = services as Service[];
+
+const servicesByCategory = typedServices.reduce<Record<string, Service[]>>((acc, s) => {
   (acc[s.category] ??= []).push(s);
   return acc;
-}, /** @type {Record<string, typeof services>} */ ({}));
+}, {});
 
 const categoryOrder = [
   "Oil Changes",

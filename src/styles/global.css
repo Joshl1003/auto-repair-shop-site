@@ -6,7 +6,7 @@
   .container-app {
     @apply mx-auto w-full max-w-6xl px-4;
   }
-
+  
   .section {
     @apply mt-14;
   }
@@ -27,3 +27,4 @@
     @apply rounded-xl border bg-white p-5 shadow-sm;
   }
 }
+

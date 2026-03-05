@@ -1,24 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import settings from "../content/site/settings.json";
+import "../styles/global.css";
 ---
 
 <BaseLayout title={`${settings.name} | Auto Repair`}>
-  <section class="py-6">
-    <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
-      Honest, reliable auto repair in your neighborhood.
-    </h1>
-    <p class="mt-3 max-w-2xl text-base text-gray-700">
-      First come, first served. Call for current wait times and quick estimates.
-    </p>
+  <section class="panel bg-gradient-to-b from-sky-50 to-white">
+  <h1 class="text-4xl font-bold tracking-tight md:text-5xl">
+    Honest, reliable auto repair—done right.
+  </h1>
 
-    <div class="mt-5 flex flex-wrap gap-3">
-      <a class="rounded-lg bg-black px-4 py-2 text-sm font-medium text-white" href={`tel:${settings.phoneHref}`}>
-        Call Now
-      </a>
-      <a class="rounded-lg border px-4 py-2 text-sm font-medium" href={settings.googleMapsUrl} target="_blank" rel="noreferrer">
-        Get Directions
-      </a>
-    </div>
-  </section>
+  <p class="mt-4 max-w-2xl text-base text-slate-700 md:text-lg">
+    First come, first served. Call for current wait times and quick estimates.
+  </p>
+
+  <div class="mt-6 flex flex-wrap gap-3">
+    <a class="btn-primary" href={`tel:${settings.phoneHref}`}>Call Now</a>
+    <a class="btn-secondary" href={settings.googleMapsUrl} target="_blank" rel="noreferrer">
+      Get Directions
+    </a>
+  </div>
+</section>
 </BaseLayout>
