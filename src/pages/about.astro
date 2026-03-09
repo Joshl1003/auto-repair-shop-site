@@ -3,41 +3,100 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import settings from "../content/site/settings.json";
 ---
 
-<BaseLayout title={"About"}>
-  <section class="py-6">
-    <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
-      Why us?
-    </h1>
-    <p class="mt-3 max-w-2xl text-base text-gray-700">
-      We guarantee quality work
-    </p>
+<BaseLayout title="About | AutoTech Repair">
 
-    <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
-      How do I start?
+  <!-- Page header -->
+  <div class="border-b pb-8">
+    <span class="category-pill">About Us</span>
+    <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+      Why Choose AutoTech Repair?
     </h1>
-    <p class="mt-3 max-w-2xl text-base text-gray-700">
-      We are currently first come first serve only. Customers are more
-      than welcome to wait at the shop, but we recommend dropping off
-      the vehicle for longer services.
+    <p class="mt-3 max-w-2xl text-base text-slate-600">
+      We're a local auto repair shop committed to honest work, fair prices, and getting you back on the road quickly.
     </p>
+  </div>
 
-    <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
-      Need your vehicle towed?
-    </h1>
-    <p class="mt-3 max-w-2xl text-base text-gray-700">
-      If your vehicle doesn't run or is unsafe to drive, please have
-      your vehicle towed to the shop for a diagnosis. We are also able
-      to contact a third-party towing company to do everything for you,
-      just give us a call at 757-856-1019 and provide us with your name,
-      phone number, vehicle information and location.
-    </p>
+  <!-- FAQ sections -->
+  <div class="mt-10 space-y-6">
 
-    <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
-      Waranty
-    </h1>
-    <p class="mt-3 max-w-2xl text-base text-gray-700">
-      Waranty information (placeholder)
-    </p>
+    <div class="rounded-2xl border bg-white p-7 shadow-sm">
+      <div class="flex items-start gap-4">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Why us?</h2>
+          <p class="mt-2 text-slate-600 leading-relaxed">
+            We guarantee quality work. Our technicians are experienced, thorough, and take pride in every job — whether it's a routine oil change or a complex repair. We treat your vehicle like our own.
+          </p>
+        </div>
+      </div>
+    </div>
 
-  </section>
+    <div class="rounded-2xl border bg-white p-7 shadow-sm">
+      <div class="flex items-start gap-4">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">How do I get started?</h2>
+          <p class="mt-2 text-slate-600 leading-relaxed">
+            We are currently <strong>first come, first served</strong>. Customers are welcome to wait at the shop, but we recommend dropping off your vehicle for longer services. Call us first to check current wait times.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border bg-white p-7 shadow-sm">
+      <div class="flex items-start gap-4">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Need your vehicle towed?</h2>
+          <p class="mt-2 text-slate-600 leading-relaxed">
+            If your vehicle doesn't run or is unsafe to drive, please have it towed to our shop for a diagnosis. We can also contact a third-party towing company on your behalf — just call us at{" "}
+            <a class="font-semibold text-red-600 hover:underline" href={`tel:${settings.phoneHref}`}>{settings.phoneDisplay}</a>{" "}
+            with your name, phone number, vehicle information, and location.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-2xl border bg-white p-7 shadow-sm">
+      <div class="flex items-start gap-4">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Warranty</h2>
+          <p class="mt-2 text-slate-600 leading-relaxed">
+            Warranty information coming soon. Please call us at <a class="font-semibold text-red-600 hover:underline" href={`tel:${settings.phoneHref}`}>{settings.phoneDisplay}</a> for details on our warranty policy.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA strip -->
+  <div class="section rounded-2xl bg-red-600 px-8 py-10 text-center text-white">
+    <h2 class="text-2xl font-bold">Ready to bring your vehicle in?</h2>
+    <p class="mt-2 text-red-100">Call us to check wait times or get a quick estimate.</p>
+    <a
+      class="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-red-600 transition-colors hover:bg-red-50"
+      href={`tel:${settings.phoneHref}`}
+    >
+      Call {settings.phoneDisplay}
+    </a>
+  </div>
+
 </BaseLayout>

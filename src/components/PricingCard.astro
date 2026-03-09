@@ -11,49 +11,51 @@ type Props = {
 const { name, description, labor, parts, total, note } = Astro.props as Props;
 ---
 
-<div class="rounded-xl border bg-white p-6 shadow-sm">
-  <!-- Title + Total -->
-  <div class="flex items-start justify-between gap-4">
-    <h3 class="text-lg font-semibold leading-snug">{name}</h3>
+<div class="rounded-xl border bg-white shadow-sm transition-shadow hover:shadow-md">
+  <!-- Colored top bar -->
+  <div class="h-1 rounded-t-xl bg-red-500"></div>
 
-    {total && (
-      <div class="text-right">
-        <div class="text-xs text-gray-500">Est. Total</div>
-        <div class="text-base font-semibold text-gray-900">{total}</div>
-      </div>
-    )}
-  </div>
+  <div class="p-6">
+    <!-- Title + Total -->
+    <div class="flex items-start justify-between gap-4">
+      <h3 class="text-base font-bold leading-snug text-slate-900">{name}</h3>
 
-  <!-- Description -->
-  {description && (
-    <p class="mt-2 text-sm leading-relaxed text-gray-700">
-      {description}
-    </p>
-  )}
-
-  <!-- Labor + Parts Breakdown -->
-  {(labor || parts) && (
-    <div class="mt-4 space-y-2 border-t pt-4 text-sm">
-      {labor && (
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">Labor</span>
-          <span class="font-medium text-gray-900">{labor}</span>
-        </div>
-      )}
-
-      {parts && (
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">Parts</span>
-          <span class="font-medium text-gray-900">{parts}</span>
+      {total && (
+        <div class="shrink-0 text-right">
+          <div class="text-xs text-slate-400">Est. Total</div>
+          <div class="text-lg font-extrabold text-red-600">{total}</div>
         </div>
       )}
     </div>
-  )}
 
-  <!-- Optional Note -->
-  {note && (
-    <p class="mt-4 text-xs text-gray-500">
-      {note}
-    </p>
-  )}
+    <!-- Description -->
+    {description && (
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">
+        {description}
+      </p>
+    )}
+
+    <!-- Labor + Parts Breakdown -->
+    {(labor || parts) && (
+      <div class="mt-4 space-y-2 rounded-lg bg-slate-50 p-3 text-sm">
+        {labor && (
+          <div class="flex items-center justify-between">
+            <span class="text-slate-500">Labor</span>
+            <span class="font-semibold text-slate-900">{labor}</span>
+          </div>
+        )}
+        {parts && (
+          <div class="flex items-center justify-between">
+            <span class="text-slate-500">Parts</span>
+            <span class="font-semibold text-slate-900">{parts}</span>
+          </div>
+        )}
+      </div>
+    )}
+
+    <!-- Optional Note -->
+    {note && (
+      <p class="mt-3 text-xs text-slate-400">{note}</p>
+    )}
+  </div>
 </div>
