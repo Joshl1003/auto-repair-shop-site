@@ -7,11 +7,18 @@
     "startingAt": "$55"
   },
   {
+    "id": "oil-change",
+    "name": "Full Synthetic Oil Change",
+    "category": "Oil Changes",
+    "description": "Full synthetic oil changes with filter replacement.",
+    "startingAt": "$70"
+  },
+  {
     "id": "brake-pads",
     "name": "Brake Pads (Axle)",
     "category": "Brake System",
     "description": "Replace front or rear pads and inspect rotors, calipers, and brake fluid.",
-    "startingAt": "$129"
+    "startingAt": ""
   },
   {
     "id": "tire-rotation",
